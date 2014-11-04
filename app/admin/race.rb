@@ -14,5 +14,18 @@ ActiveAdmin.register Race do
   #   permitted
   # end
 
+	action_item :only => :show do
+    link_to 'Import Runners', admin_race_path + '/import_runners'
+  end
 
+  member_action :import_runners, method: [:get, :post] do
+  	if request.post?
+			race = Race.find(params[:id])
+			race.import_runners_from_file(params[:import_runners][:file].tempfile.path)
+		
+			flash[:notice] = "Runners are importing!"
+			redirect_to :action => :index
+  	end
+  end
+  
 end

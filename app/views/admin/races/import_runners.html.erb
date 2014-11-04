@@ -1,0 +1,6 @@
+<%= semantic_form_for :import_runners, :url => 'import_runners', :method => :post do |f| %>
+	<%= f.inputs do %>
+		<%= f.input :file, :as => :file %>
+	<% end %>
+	<%= f.actions %>
+<% end %>
