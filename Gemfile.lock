@@ -17,11 +17,10 @@ GIT
       sass-rails
 
 GIT
-  remote: git://github.com/bradrees/fixed_width.git
-  revision: 2963c93de028dae5466ff53fd6bfad5c0d4a9072
+  remote: git://github.com/data-axle/gotime-slither.git
+  revision: 0146f6f17ebd1a718136b7296b68eb392048d141
   specs:
-    fixed_width ()
-      activesupport (>= 3)
+    gotime-slither (1.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -147,7 +146,6 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    slither (0.99.4)
     spring (1.1.3)
     sprockets (2.11.3)
       hike (~> 1.2)
@@ -179,13 +177,12 @@ DEPENDENCIES
   activeadmin!
   coffee-rails (~> 4.0.0)
   devise
-  fixed_width!
+  gotime-slither!
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.7)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
-  slither
   spring
   sqlite3
   turbolinks

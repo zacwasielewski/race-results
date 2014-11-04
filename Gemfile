@@ -49,6 +49,5 @@ gem 'spring',        group: :development
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 
-gem 'slither'
-gem 'fixed_width', github: 'bradrees/fixed_width'
+gem 'gotime-slither', github: 'data-axle/gotime-slither'
 

@@ -39,7 +39,7 @@ class Race < ActiveRecord::Base
   
 	def parse_runners_from_file(file)
 		
-    Slither.define :runners do |d|
+    Slither.define :runners, :by_bytes => false, :validate_length => false, force_character_offset: true do |d|
       d.header do |header|
     		header.trap { |line|
         	!(line[0,6] =~ /\s*[0-9]+\s/)
