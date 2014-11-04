@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @runner.name %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @runner.place %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @runner.sex %>
+</p>
+
+<p>
+  <strong>Place in sex:</strong>
+  <%= @runner.place_in_sex %>
+</p>
+
+<p>
+  <strong>Place in age group:</strong>
+  <%= @runner.place_in_age_group %>
+</p>
+
+<p>
+  <strong>Age group:</strong>
+  <%= @runner.age_group %>
+</p>
+
+<p>
+  <strong>Gun time:</strong>
+  <%= @runner.gun_time %>
+</p>
+
+<p>
+  <strong>Gun pace:</strong>
+  <%= @runner.gun_pace %>
+</p>
+
+<p>
+  <strong>Net time:</strong>
+  <%= @runner.net_time %>
+</p>
+
+<p>
+  <strong>Net pace:</strong>
+  <%= @runner.net_pace %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @runner.country %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @runner.state %>
+</p>
+
+<%= link_to 'Edit', edit_runner_path(@runner) %> |
+<%= link_to 'Back', runners_path %>
