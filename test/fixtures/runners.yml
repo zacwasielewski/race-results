@@ -1,29 +1,33 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Geoffrey Kenisi Bundi
   place: 1
-  sex: MyString
+  sex: M
   place_in_sex: 1
+  age_group: M25-29
+  total_in_age_group: 934
   place_in_age_group: 1
-  age_group: MyString
-  gun_time: 2014-11-04 01:50:20
-  gun_pace: 2014-11-04 01:50:20
-  net_time: 2014-11-04 01:50:20
-  net_pace: 2014-11-04 01:50:20
-  country: MyString
-  state: MyString
+  gun_time: 44:18
+  gun_pace: 4:46
+  net_time: 44:18
+  net_pace: 4:46
+  country: Kenya
+  state:
+  city:
 
 two:
-  name: MyString
-  place: 1
-  sex: MyString
-  place_in_sex: 1
-  place_in_age_group: 1
-  age_group: MyString
-  gun_time: 2014-11-04 01:50:20
-  gun_pace: 2014-11-04 01:50:20
-  net_time: 2014-11-04 01:50:20
-  net_pace: 2014-11-04 01:50:20
-  country: MyString
-  state: MyString
+  name: Julius Keter
+  place: 2
+  sex: M
+  place_in_sex: 2
+  age_group: M25-29
+  total_in_age_group: 934
+  place_in_age_group: 2
+  gun_time: 44:33
+  gun_pace: 4:47
+  net_time: 44:32
+  net_pace: 4:47
+  country: Kenya
+  state:
+  city:
