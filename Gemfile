@@ -7,6 +7,9 @@ gem 'rails', '4.1.7'
 # Use pg as the database for Active Record
 gem 'pg'
 
+# Use sqlite as the database for testing
+gem 'sqlite3', group: :test
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 

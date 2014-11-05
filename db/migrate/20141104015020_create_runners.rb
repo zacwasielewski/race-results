@@ -10,10 +10,10 @@ class CreateRunners < ActiveRecord::Migration
       t.string :age_group
       t.integer :total_in_age_group
       t.integer :place_in_age_group
-      t.time :gun_time
-      t.time :gun_pace
-      t.time :net_time
-      t.time :net_pace
+      t.integer :gun_time
+      t.integer :gun_pace
+      t.integer :net_time
+      t.integer :net_pace
       t.string :country
       t.string :state
       t.string :city
