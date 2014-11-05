@@ -4,8 +4,6 @@ class Race < ActiveRecord::Base
 	
   def import_runners_from_file(file)
   	runners = parse_runners_from_file(file)
-  	Rails::logger.debug "RUNNERS:"
-  	Rails::logger.debug runners.inspect
     runners[:body].each do |runner_data|
     	self.import_runner(runner_data)
     end
@@ -92,14 +90,10 @@ class Race < ActiveRecord::Base
   def normalize_location(city_or_country,state)
   	location = {}
 		if state.empty?
-			Rails::logger.debug "EMPTY!"
-			Rails::logger.debug state
 			location[:country] = city_or_country.force_encoding('UTF-8') # Country.named(vals[:city_or_country]).code
 			location[:state] = nil
 			location[:city] = nil
 		else
-			Rails::logger.debug "NOT EMPTY!"
-			Rails::logger.debug state
 			location[:country] = 'United States' # Country.named("United States").code
 			location[:state] = state.force_encoding('UTF-8')
 			location[:city] = city_or_country.force_encoding('UTF-8')
