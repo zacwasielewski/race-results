@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104022057) do
+ActiveRecord::Schema.define(version: 20141105010114) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -44,10 +44,10 @@ ActiveRecord::Schema.define(version: 20141104022057) do
     t.string   "age_group"
     t.integer  "total_in_age_group"
     t.integer  "place_in_age_group"
-    t.time     "gun_time"
-    t.time     "gun_pace"
-    t.time     "net_time"
-    t.time     "net_pace"
+    t.integer  "gun_time"
+    t.integer  "gun_pace"
+    t.integer  "net_time"
+    t.integer  "net_pace"
     t.string   "country"
     t.string   "state"
     t.string   "city"

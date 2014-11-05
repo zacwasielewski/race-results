@@ -51,3 +51,4 @@ gem 'activeadmin', github: 'activeadmin'
 
 gem 'gotime-slither', github: 'data-axle/gotime-slither'
 
+gem 'chronic_duration'

@@ -22,21 +22,21 @@ PLACE NAME                    SEX     &   AGEGROUP        TIME   PACE     TIME  
  5313 Zachary Wasielewski    M#3585   505/863  M30-34   1:36:51 10:24   1:34:50 10:11   Utica             NY 
  5314 Andra L. Kowalczyk     F#1729   324/1022 F25-29   1:36:51 10:24   1:26:06  9:15   Columbia          MD 
 EOS
-
+		
 		file = Tempfile.new('new_runners.txt')
 		file.write(text)
 		file.rewind
-
+		
 		assert_difference "Runner.count", 9 do
 			@race.import_runners_from_file( Rack::Test::UploadedFile.new(file, 'text/plain') )
 		end
-
+		
 		updated_runner = @race.runners.find_by_place(1)
 		assert_equal "Geoffrey Kenisi Bundi", updated_runner.name
 		
 		new_runner = @race.runners.find_by_place(5)
 		assert_equal "Samson Gebre. Gezahai", new_runner.name
-
+		
 		global_runner = @race.runners.find_by_place(3)
 		assert_equal "Ethiopia", global_runner.country
 		assert_equal nil, global_runner.state
@@ -52,6 +52,12 @@ EOS
 		assert_equal "René Roux", foreign_runner.name
 		assert_equal "Montréal", foreign_runner.city
 		assert_equal "QC", foreign_runner.state
+		
+		# make sure times are saved and converted properly
+		assert_equal "1:36:51", local_runner.gun_time
+		assert_equal   "10:24", local_runner.gun_pace
+		assert_equal "1:34:50", local_runner.net_time
+		assert_equal   "10:11", local_runner.net_pace
 		
   end
 
