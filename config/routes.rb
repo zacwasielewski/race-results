@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   devise_for :users, ActiveAdmin::Devise.config
   
   ActiveAdmin.routes(self)
+
+	namespace :api, :defaults => {:format => :json} do
+		resources :races do
+			resources :runners
+		end
+	end
   
   resources :races do
 	  resources :runners
