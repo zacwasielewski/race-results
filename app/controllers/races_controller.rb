@@ -24,41 +24,16 @@ class RacesController < ApplicationController
   # POST /races
   # POST /races.json
   def create
-    @race = Race.new(race_params)
-
-    respond_to do |format|
-      if @race.save
-        format.html { redirect_to @race, notice: 'Race was successfully created.' }
-        format.json { render :show, status: :created, location: @race }
-      else
-        format.html { render :new }
-        format.json { render json: @race.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /races/1
   # PATCH/PUT /races/1.json
   def update
-    respond_to do |format|
-      if @race.update(race_params)
-        format.html { redirect_to @race, notice: 'Race was successfully updated.' }
-        format.json { render :show, status: :ok, location: @race }
-      else
-        format.html { render :edit }
-        format.json { render json: @race.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # DELETE /races/1
   # DELETE /races/1.json
   def destroy
-    @race.destroy
-    respond_to do |format|
-      format.html { redirect_to races_url, notice: 'Race was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private
