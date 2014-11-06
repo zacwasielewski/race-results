@@ -5,7 +5,11 @@ class RunnersController < ApplicationController
   # GET /runners
   # GET /runners.json
   def index
-    @runners = Race.find(params[:race_id]).runners
+    #@runners = Race.find(params[:race_id]).runners
+    query = {}
+    query.merge!(params[:q]) if !params[:q].blank?
+    @q = @race.runners.search(query)
+    @runners = @q.result.order('place ASC').page(params[:page]).per_page(20)
   end
 
   # GET /runners/1

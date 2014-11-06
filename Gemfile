@@ -57,3 +57,5 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'gotime-slither', github: 'data-axle/gotime-slither'
 
 gem 'chronic_duration'
+
+gem 'will_paginate', '~> 3.0'

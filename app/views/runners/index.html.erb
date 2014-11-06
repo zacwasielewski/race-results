@@ -1,37 +1,42 @@
 <h1>Runners</h1>
 
+<%= search_form_for @q, :url => race_runners_path(@race) do |f| %>
+  <fieldset>
+    <%= f.label :name_cont %>
+    <%= f.text_field :name_cont %>
+    <%= f.submit %>
+  </fieldset>
+<% end %>
+
+<%= will_paginate @runners %>
+
 <table>
   <thead>
     <tr>
-      <th>Place</th>
       <th>Name</th>
-      <th>Sex</th>
-      <th>Place in sex</th>
-      <th>Age group</th>
-      <th>Place in age group</th>
-      <th>Time</th>
-      <th>Pace</th>
-      <th>Country</th>
-      <th>State</th>
+      <th class="number">Place</th>
+      <th class="center">Sex</th>
+      <th class="center">Age group</th>
+      <th class="number">Time</th>
+      <th class="number">Pace</th>
+      <th colspan="3">Residence</th>
     </tr>
   </thead>
-
   <tbody>
     <% @runners.each do |runner| %>
       <tr>
-        <td><%= runner.place %></td>
         <td><%= link_to runner.name, race_runner_path(@race,runner) %></td>
-        <td><%= runner.sex %></td>
-        <td><%= runner.place_in_sex %></td>
-        <td><%= runner.age_group %></td>
-        <td><%= runner.place_in_age_group %></td>
-        <td><%= runner.net_time %></td>
-        <td><%= runner.net_pace %></td>
+        <td class="number"><%= runner.place %></td>
+        <td class="center"><%= runner.sex %></td>
+        <td class="center"><%= runner.age_group %></td>
+        <td class="number"><%= runner.net_time %></td>
+        <td class="number"><%= runner.net_pace %></td>
         <td><%= runner.country %></td>
         <td><%= runner.state %></td>
+        <td><%= runner.city %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<%= will_paginate @runners %>
