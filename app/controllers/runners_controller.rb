@@ -5,39 +5,15 @@ class RunnersController < ApplicationController
   # GET /runners
   # GET /runners.json
   def index
-    #@runners = Race.find(params[:race_id]).runners
     query = {}
     query.merge!(params[:q]) if !params[:q].blank?
     @q = @race.runners.search(query)
-    @runners = @q.result.order('place ASC').page(params[:page]).per_page(20)
+    @runners = @q.result.order('place ASC').page(params[:page]).per_page(10)
   end
 
   # GET /runners/1
   # GET /runners/1.json
   def show
-  end
-
-  # GET /runners/new
-  def new
-  end
-
-  # GET /runners/1/edit
-  def edit
-  end
-
-  # POST /runners
-  # POST /runners.json
-  def create
-  end
-
-  # PATCH/PUT /runners/1
-  # PATCH/PUT /runners/1.json
-  def update
-  end
-
-  # DELETE /runners/1
-  # DELETE /runners/1.json
-  def destroy
   end
 
   private

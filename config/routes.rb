@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
 	namespace :api, :defaults => {:format => :json} do
 		resources :races do
-			resources :runners
+			resources :runners do
+				get 'datatable', on: :collection
+			end
 		end
 	end
   
