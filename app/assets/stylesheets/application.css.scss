@@ -10,7 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require jquery.dataTables.min
+ *= require dataTables.bootstrap
  *= require races
  *= require runners
  *= require_self
@@ -18,3 +18,9 @@
  
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+table.dataTable thead .sorting { background-image: url(asset-path('sort_both.png',image)); }
+table.dataTable thead .sorting_asc { background-image: url(asset-path('sort_asc.png',image)); }
+table.dataTable thead .sorting_desc { background-image: url(asset-path('sort_desc.png',image)); }
+table.dataTable thead .sorting_asc_disabled { background-image: url(asset-path('sort_asc_disabled.png',image)); }
+table.dataTable thead .sorting_desc_disabled { background-image: url(asset-path('sort_desc_disabled.png',image)); }
