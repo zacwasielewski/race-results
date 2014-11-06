@@ -1,8 +1,20 @@
 =begin
 
-This model file is extracted from a basic proof-of-concept Rails app. The app allows an
+This model file is extracted from a basic, proof-of-concept Rails app. The app allows an
 admin to import road race results from a fixed-width text file. The results are publicly
 viewable in a sortable, searchable, paginated table interface.
+
+This app is not full-featured, but rather intended to demonstrate familiarity with
+a variety of Rails development concepts:
+
+- ORM
+- Routing
+- Data import
+- API creation
+- User authentication and admin management
+- Automated testing
+- Version control
+- Deployment
 
 The full, live app can be viewed here:
 
@@ -17,7 +29,7 @@ Repo:		https://github.com/zacwasielewski/race-results
 I appreciate your consideration!
 
 Thanks,
-Zac
+Zac Wasielewski
 
 =end
 
@@ -28,7 +40,7 @@ class Race < ActiveRecord::Base
   def import_runners_from_file(file)
   
 		ActiveRecord::Base.transaction do
-			parse_runners_from_file(file).each{ |runner_data|
+			parse_runner_data_from_file(file).each{ |runner_data|
 				runner = Runner.find_or_initialize_by({ :race_id => self.id, :place => runner_data[:place] })
 				runner.attributes = normalize_runner_data(runner_data)
 				runner.save
@@ -36,8 +48,8 @@ class Race < ActiveRecord::Base
 		end
   	
   end
-    
-	def parse_runners_from_file(file)
+  
+	def parse_runner_data_from_file(file)
     Slither.define :runners, :by_bytes => false, :validate_length => false, force_character_offset: true do |d|
       d.header do |header|
     		header.trap { |line|
