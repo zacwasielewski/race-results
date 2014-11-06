@@ -1,3 +1,26 @@
+=begin
+
+This model file is extracted from a basic proof-of-concept Rails app. The app allows an
+admin to import road race results from a fixed-width text file. The results are publicly
+viewable in a sortable, searchable, paginated table interface.
+
+The full, live app can be viewed here:
+
+URL:		https://cryptic-tor-3432.herokuapp.com/
+
+Admin:	https://cryptic-tor-3432.herokuapp.com/admin
+				- username: admin@example.com
+				- password: password
+				
+Repo:		https://github.com/zacwasielewski/race-results
+
+I appreciate your consideration!
+
+Thanks,
+Zac
+
+=end
+
 class Race < ActiveRecord::Base
 	
 	has_many :runners
@@ -58,7 +81,7 @@ class Race < ActiveRecord::Base
   
   def normalize_runner_data(runner)
 		location = normalize_location(runner[:city_or_country],runner[:state])
-  	{
+  	normalized = {
 			:place							=> runner[:place],
 			:name								=> runner[:name].force_encoding('UTF-8'),
 			:sex								=> runner[:sex],
