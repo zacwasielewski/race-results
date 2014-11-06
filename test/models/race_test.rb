@@ -8,7 +8,7 @@ class RaceTest < ActiveSupport::TestCase
     @race = races(:one)
   end
 
-  test "should import runners from text file" do
+  test "should import runners from file" do
 		text = <<-EOS
 PLACE NAME                    SEX     &   AGEGROUP        TIME   PACE     TIME   PACE   RESIDENCE         
 ------------------------------------------------------------------------------------------------------------ 
@@ -27,7 +27,8 @@ EOS
 		file.write(text)
 		file.rewind
 		
-		assert_difference "Runner.count", 9 do
+		# 1 and 2 were already inserted from fixtures
+		assert_difference "Runner.count", 7 do
 			@race.import_runners_from_file( Rack::Test::UploadedFile.new(file, 'text/plain') )
 		end
 		

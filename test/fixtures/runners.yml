@@ -15,6 +15,7 @@ one:
   country: Kenya
   state:
   city:
+  race: one
 
 two:
   name: Julius Keter
@@ -31,4 +32,5 @@ two:
   country: Kenya
   state:
   city:
+  race: one
 

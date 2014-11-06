@@ -6,13 +6,13 @@ class RunnersControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
+    get :index, race_id: @runner.race_id
     assert_response :success
     assert_not_nil assigns(:runners)
   end
 
   test "should show runner" do
-    get :show, id: @runner
+    get :show, race_id: @runner.race_id, id: @runner
     assert_response :success
   end
 
