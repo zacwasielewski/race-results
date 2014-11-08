@@ -25,4 +25,5 @@ test:
 
 production:
   <<: *default
+  host: localhost
   database: raceresults_production
